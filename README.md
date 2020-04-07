@@ -15,7 +15,7 @@ yarn && yarn start
 ```
 
 3. Basic configs can be found in `src/Configs/index.ts`
-4. API call `src/APIs/`
+4. Update API call in `src/APIs/`
 
 ## License
 This is not my idea, just a pet project for an Interview Test
