@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/infinite-gallery/static/css/main.1466fcdc.chunk.css",
+    "main.js": "/infinite-gallery/static/js/main.526814bb.chunk.js",
+    "main.js.map": "/infinite-gallery/static/js/main.526814bb.chunk.js.map",
+    "runtime-main.js": "/infinite-gallery/static/js/runtime-main.81ad4e6a.js",
+    "runtime-main.js.map": "/infinite-gallery/static/js/runtime-main.81ad4e6a.js.map",
+    "static/css/2.7e4c7607.chunk.css": "/infinite-gallery/static/css/2.7e4c7607.chunk.css",
+    "static/js/2.54f7329c.chunk.js": "/infinite-gallery/static/js/2.54f7329c.chunk.js",
+    "static/js/2.54f7329c.chunk.js.map": "/infinite-gallery/static/js/2.54f7329c.chunk.js.map",
+    "index.html": "/infinite-gallery/index.html",
+    "precache-manifest.fb97a6a348bee3d749bac8feebbeaa6c.js": "/infinite-gallery/precache-manifest.fb97a6a348bee3d749bac8feebbeaa6c.js",
+    "service-worker.js": "/infinite-gallery/service-worker.js",
+    "static/css/2.7e4c7607.chunk.css.map": "/infinite-gallery/static/css/2.7e4c7607.chunk.css.map",
+    "static/css/main.1466fcdc.chunk.css.map": "/infinite-gallery/static/css/main.1466fcdc.chunk.css.map",
+    "static/js/2.54f7329c.chunk.js.LICENSE.txt": "/infinite-gallery/static/js/2.54f7329c.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/infinite-gallery/static/media/outline-icons.ef60a4f6.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.81ad4e6a.js",
+    "static/css/2.7e4c7607.chunk.css",
+    "static/js/2.54f7329c.chunk.js",
+    "static/css/main.1466fcdc.chunk.css",
+    "static/js/main.526814bb.chunk.js"
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["App.css"],"names":[],"mappings":"AAAA,UACE,YACF,CAEA,cACE,eACF","file":"main.1466fcdc.chunk.css","sourcesContent":["html > body {\n  height: unset;\n}\n\nbody .ui.menu {\n  border-radius: 0;\n}"]}
