@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react'
-import { isMobile } from 'react-device-detect'
 import { Grid, Image } from 'semantic-ui-react'
 import GalleryContainer from '../Stores/GalleryContainer'
 
 let fetching = false
 
-const Gallery = () => {
+const Gallery = ({ cols }: { cols: any }) => {
   const gallery = GalleryContainer.useContainer()
 
   const handleScroll = () => {
@@ -25,8 +24,6 @@ const Gallery = () => {
       window.removeEventListener("scroll", handleScroll)
     }
   })
-
-  const cols = isMobile ? 1 : 5
 
   return (
     <Grid columns={cols}>

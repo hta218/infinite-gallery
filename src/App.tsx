@@ -25,6 +25,7 @@ const desktopCSS = css`
   & > .ui.container {
     padding: 16px;
     margin-left: 15rem !important;
+    width: unset;
   }
   
   > .ui.menu {
@@ -46,6 +47,7 @@ const androidCSS = css`
 
 const iOSCSS = css`
   > .ui.menu {
+    margin-bottom: 0px;
     position: fixed;
     bottom: 0;
     z-index: 100;
