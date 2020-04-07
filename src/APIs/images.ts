@@ -1,5 +1,6 @@
 import { IMAGES_PER_FETCH } from "../Configs"
 
+// Request to server
 const fetchImages: () => string[] = () => {
   let images: string[] = []
   const timeStamp = new Date().getTime()
