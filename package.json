@@ -11,6 +11,7 @@
     "@types/react-dom": "^16.9.6",
     "@types/styled-components": "^5.0.1",
     "gh-pages": "^2.2.0",
+    "netlify-cli": "^2.40.0",
     "react": "^16.13.1",
     "react-device-detect": "^1.11.14",
     "react-dom": "^16.13.1",
