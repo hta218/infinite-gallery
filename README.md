@@ -15,7 +15,7 @@ git clone https://github.com/hta218/infinite-gallery.git && cd infinite-gallery
 yarn && yarn start
 ```
 
-3. Basic configs can be found in `src/Configs/index.ts`
+3. Basic settings can be found in `src/Settings/index.ts`
 4. Update API call in `src/APIs/`
 
 ## License
