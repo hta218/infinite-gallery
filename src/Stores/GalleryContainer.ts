@@ -1,20 +1,31 @@
 import { useState } from 'react'
 import { createContainer } from 'unstated-next'
 import fetchImages from '../APIs/images'
-import { IMAGES_LIMIT } from '../Configs'
+import { IMAGES_LIMIT } from '../Settings'
+
+export interface IImage {
+  id: string
+  author: string
+  width: number
+  height: number
+  url: string
+  download_url: string
+  thumbnail_url: string
+}
 
 const GalleryContainer = createContainer(() => {
-  const initialImages = fetchImages()
-  const [images, setImages] = useState(initialImages)
+  const [images, setImages] = useState<IImage[]>([])
+  const [pageLoad, setPageLoad] = useState(1)
 
-  const loadMore = () => {
+  const loadMore = async () => {
     if (images.length < IMAGES_LIMIT) {
-      const newImages = fetchImages()
+      const newImages: any[] = await fetchImages(pageLoad)
+      // setPageLoad(pageLoad + 1)
       setImages([...images, ...newImages])
     }
   }
 
-  return { images, loadMore }
+  return { images, loadMore, pageLoad, setPageLoad }
 })
 
 export default GalleryContainer

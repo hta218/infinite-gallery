@@ -8,6 +8,8 @@ const LOCAL_STORAGE_KEY = '__isAuthed'
 const AppContainer = createContainer(() => {
   const [view, setView] = useState('home')
   const [auth, setAuth] = useState(!!localStorage.getItem(LOCAL_STORAGE_KEY))
+  const [openLightbox, setOpenLightbox] = useState(false)
+  const [imageIndex, setImageIndex] = useState(0)
 
   const login = (username: string, password: string, remember: boolean) => {
     // Handling request to server
@@ -25,6 +27,7 @@ const AppContainer = createContainer(() => {
   }
 
   const logout = () => setAuth(false)
+
   const changeView = (v: string) => {
     if (v === 'logout') {
       logout()
@@ -36,7 +39,7 @@ const AppContainer = createContainer(() => {
     }
   }
 
-  return { view, auth, login, changeView }
+  return { view, auth, login, changeView, openLightbox, setOpenLightbox, imageIndex, setImageIndex }
 })
 
 export default AppContainer

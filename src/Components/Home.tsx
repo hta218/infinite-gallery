@@ -3,6 +3,7 @@ import { isBrowser, isMobile, isTablet } from 'react-device-detect'
 import { Container, Header } from 'semantic-ui-react'
 import Menu from '../Components/Menu'
 import Gallery from './Gallery'
+import ImageLightbox from './Lightbox'
 
 const Home = ({ view }: { view: string }) => {
   const header = isBrowser ? 'h1' : 'h2'
@@ -20,6 +21,7 @@ const Home = ({ view }: { view: string }) => {
         view === 'home' && <Container>
           <Header as={header} textAlign="center">Gallery Modal</Header>
           <Gallery cols={cols} />
+          <ImageLightbox />
         </Container>
       }
       {view === 'notifications' && <Container>Notifications</Container>}

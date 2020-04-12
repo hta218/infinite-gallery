@@ -1,6 +1,6 @@
 # 🚿 Infinite Loading Modal Gallery
 
-An `infinite-loading` Modal Gallery React app using [unstated-next](https://github.com/jamiebuilds/unstated-next) (state management) and [react-semantic-ui](https://react.semantic-ui.com/)
+An `infinite-loading` Modal Gallery React app using [unstated-next](https://github.com/jamiebuilds/unstated-next) (state management) and [react-semantic-ui](https://react.semantic-ui.com/).
 
 [Demo on Netlify](https://infinite-gallery.netlify.com)
 

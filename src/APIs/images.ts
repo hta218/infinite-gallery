@@ -1,14 +1,20 @@
-import { IMAGES_PER_FETCH } from "../Configs"
+import { IMAGES_PER_FETCH } from "../Settings"
+import { IImage } from "../Stores/GalleryContainer"
+import { getDisplaySrc } from "../Settings/utils"
 
 // Request to server
-const fetchImages: () => string[] = () => {
-  let images: string[] = []
-  const timeStamp = new Date().getTime()
-  for (let i = 0; i < IMAGES_PER_FETCH; i++) {
-    const url = `https://picsum.photos/500?random=${timeStamp + i}`
-    images.push(url)
-  }
-  return images
+const fetchImages: (page: number) => Promise<any[]> = async (page) => {
+  const imageAPI = `https://picsum.photos/v2/list?page=${page}?limit=${IMAGES_PER_FETCH}`
+  let res: IImage[] = await (await fetch(imageAPI)).json()
+
+  res = res.map((img: IImage) => {
+    return {
+      ...img,
+      thumbnail_url: getDisplaySrc(img.download_url)
+    }
+  })
+
+  return res
 }
 
 export default fetchImages
