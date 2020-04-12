@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { createContainer } from 'unstated-next'
 import fetchImages from '../APIs/images'
-import { PAGE_LIMIT } from '../Settings'
+import { INITIAL_PAGE, PAGE_LIMIT } from '../Settings'
 
 export interface IImage {
   id: string
@@ -15,12 +15,11 @@ export interface IImage {
 }
 
 const GalleryContainer = createContainer(() => {
-  const rand = Math.round(Math.random() * 10)
-  const [pageLoad, setPageLoad] = useState(rand)
+  const [pageLoad, setPageLoad] = useState(INITIAL_PAGE)
   const [images, setImages] = useState<IImage[]>([])
 
   const loadPage = () => {
-    if (pageLoad < PAGE_LIMIT + rand) {
+    if (pageLoad < PAGE_LIMIT + INITIAL_PAGE) {
       fetchImages(pageLoad).then(newImages => {
         setPageLoad(pageLoad + 1)
         setImages([...images, ...newImages])

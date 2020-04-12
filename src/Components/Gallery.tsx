@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { Grid } from 'semantic-ui-react'
+import { INITIAL_PAGE } from '../Settings'
+import AppContainer from '../Stores/AppContainer'
 import GalleryContainer from '../Stores/GalleryContainer'
 import LazyImage from './LazyImage'
-import AppContainer from '../Stores/AppContainer'
 
 let fetching = false
 
@@ -25,7 +26,7 @@ const Gallery = ({ cols }: { cols: any }) => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll)
-    if (gallery.pageLoad === 1) {
+    if (gallery.pageLoad === INITIAL_PAGE) {
       gallery.loadPage()
     }
     return () => {

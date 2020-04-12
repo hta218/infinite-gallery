@@ -59,8 +59,8 @@ const iOSCSS = css`
 `
 
 const StyledApp = styled.div`
+  .ui.container { min-height: 110vh; }
   img {
-    min-height: 250px;
     opacity: 1;
     transition: opacity .3s ease;
   }
