@@ -1,34 +1,37 @@
 import React, { useEffect } from 'react'
-import { Grid, Image } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import GalleryContainer from '../Stores/GalleryContainer'
+import LazyImage from './LazyImage'
 import AppContainer from '../Stores/AppContainer'
 
 let fetching = false
 
 const Gallery = ({ cols }: { cols: any }) => {
-  const appCont = AppContainer.useContainer()
   const gallery = GalleryContainer.useContainer()
+  const appCont = AppContainer.useContainer()
+  // @ts-ignore
+  window.gallery = gallery
 
-  useEffect(() => {
-    const handleScroll = async () => {
-      let bodyHeight = document.body.getBoundingClientRect().height;
-      if (window.scrollY + window.innerHeight >= bodyHeight) {
-        if (!fetching) {
-          await gallery.loadMore()
-          gallery.setPageLoad(gallery.pageLoad + 1)
-          fetching = true
-          setTimeout(() => { fetching = false }, 300)
-        }
+  const handleScroll = () => {
+    let bodyHeight = document.body.getBoundingClientRect().height
+    if (window.scrollY + window.innerHeight >= bodyHeight - 100) {
+      if (!fetching) {
+        gallery.loadPage()
+        fetching = true
+        setTimeout(() => { fetching = false }, 300)
       }
     }
+  }
 
-    gallery.loadMore().then(() => {
-    })
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll)
+    if (gallery.pageLoad === 1) {
+      gallery.loadPage()
+    }
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
-  }, [gallery])
+  })
 
   const handleImageClick = (idx: number) => {
     appCont.setImageIndex(idx)
@@ -40,10 +43,9 @@ const Gallery = ({ cols }: { cols: any }) => {
       {
         gallery.images.map((img, idx) => {
           return <Grid.Column key={idx}>
-            <Image
-              src={img.thumbnail_url}
+            <LazyImage
               onClick={() => handleImageClick(idx)}
-            />
+              src={img.thumbnail_url} />
           </Grid.Column>
         })
       }

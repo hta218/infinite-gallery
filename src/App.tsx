@@ -59,6 +59,16 @@ const iOSCSS = css`
 `
 
 const StyledApp = styled.div`
+  img {
+    min-height: 250px;
+    opacity: 1;
+    transition: opacity .3s ease;
+  }
+  img:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
   ${ isBrowser && desktopCSS}
   ${ isAndroid && androidCSS}
   ${ isIOS && iOSCSS}

@@ -9,8 +9,10 @@ const ImageLightbox = () => {
   const galleryCont = GalleryContainer.useContainer()
 
   const { openLightbox, imageIndex, setImageIndex, setOpenLightbox } = appCont
+
   const { images } = galleryCont
-  const srcs = images.map(img => img.download_url)
+  const srcs = images.map(img => img.lightbox_url)
+  const currImg = images[imageIndex]
 
   if (!openLightbox) { return null }
 
@@ -21,6 +23,8 @@ const ImageLightbox = () => {
     onCloseRequest={() => setOpenLightbox(false)}
     onMovePrevRequest={() => setImageIndex((imageIndex + srcs.length - 1) % srcs.length)}
     onMoveNextRequest={() => setImageIndex((imageIndex + 1) % srcs.length)}
+    animationOnKeyInput={true}
+    imageTitle={`Image by ${currImg.author}`}
   />
 }
 

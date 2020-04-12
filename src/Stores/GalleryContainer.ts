@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { createContainer } from 'unstated-next'
 import fetchImages from '../APIs/images'
-import { IMAGES_LIMIT } from '../Settings'
+import { PAGE_LIMIT } from '../Settings'
 
 export interface IImage {
   id: string
@@ -11,21 +11,24 @@ export interface IImage {
   url: string
   download_url: string
   thumbnail_url: string
+  lightbox_url: string
 }
 
 const GalleryContainer = createContainer(() => {
+  const rand = Math.round(Math.random() * 10)
+  const [pageLoad, setPageLoad] = useState(rand)
   const [images, setImages] = useState<IImage[]>([])
-  const [pageLoad, setPageLoad] = useState(1)
 
-  const loadMore = async () => {
-    if (images.length < IMAGES_LIMIT) {
-      const newImages: any[] = await fetchImages(pageLoad)
-      // setPageLoad(pageLoad + 1)
-      setImages([...images, ...newImages])
+  const loadPage = () => {
+    if (pageLoad < PAGE_LIMIT + rand) {
+      fetchImages(pageLoad).then(newImages => {
+        setPageLoad(pageLoad + 1)
+        setImages([...images, ...newImages])
+      })
     }
   }
 
-  return { images, loadMore, pageLoad, setPageLoad }
+  return { images, loadPage, pageLoad, setPageLoad }
 })
 
 export default GalleryContainer
