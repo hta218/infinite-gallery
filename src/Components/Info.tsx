@@ -19,8 +19,13 @@ const Info = () => {
   return <StyledInfo className="item">
     Leo @ hta218
     {
-      ICONS.map((icon: { name: any, link: string }) => {
-        return <Icon name={icon.name} link onClick={() => handleClick(icon.link)} />
+      ICONS.map((icon: { name: any, link: string }, idx) => {
+        return <Icon
+          key={idx}
+          link
+          name={icon.name}
+          onClick={() => handleClick(icon.link)}
+        />
       })
     }
   </StyledInfo>
