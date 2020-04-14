@@ -13,6 +13,7 @@ const LazyImage = ({ src, onClick }: { src: string, onClick: () => void }) => {
       setLoaded(true)
       img.remove()
     }
+    // eslint-disable-next-line
   }, [])
 
   return <Image
