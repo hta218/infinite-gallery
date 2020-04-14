@@ -1,6 +1,5 @@
 html > body {
   height: unset;
-  /* min-height: 110vh; */
 }
 
 body .ui.menu {

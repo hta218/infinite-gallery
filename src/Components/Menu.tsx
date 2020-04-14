@@ -1,6 +1,7 @@
 import React from 'react'
 import { Menu } from 'semantic-ui-react'
 import AppContainer from '../Stores/AppContainer'
+import Info from './Info'
 
 const AppMenu = (props: any) => {
   const appContainer = AppContainer.useContainer()
@@ -21,6 +22,7 @@ const AppMenu = (props: any) => {
         }
         )
       }
+      <Info />
     </Menu>
   )
 }
