@@ -18,5 +18,3 @@ yarn && yarn start
 3. Basic settings can be found in `src/Settings/index.ts`
 4. Update API call in `src/APIs/`
 
-## License
-This is not my idea, just a pet project for an Interview Test
