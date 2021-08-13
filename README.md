@@ -1,4 +1,4 @@
-# 🚿 Infinite Loading Modal Gallery
+# 🚿 Infinite Loading Gallery
 
 An `infinite-loading` Modal Gallery React app using [unstated-next](https://github.com/jamiebuilds/unstated-next) (state management) and [react-semantic-ui](https://react.semantic-ui.com/).
 
